@@ -1,0 +1,25 @@
+# Credenciales locales (no subir al repositorio)
+config/config.local.php
+
+# Reportes PDF generados (opcional)
+reportes/archivos_generados/
+
+# Entorno y Configuración Personal
+.env
+.cursor/
+repomix-output.xml
+repomix.config.json
+
+# Carpetas de Respaldo (Como la que mencionaste)
+HLOTESISfin - Copy*/
+docs/
+
+# Dependencias (Frontend/Backend)
+node_modules/
+vendor/
+
+# Archivos de Sistema y Laragon
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
