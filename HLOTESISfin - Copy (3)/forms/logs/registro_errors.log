@@ -1,0 +1,18 @@
+[2025-07-07 05:41:58] Inicio de proceso de registro {"method":"POST","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36"}
+[2025-07-07 05:41:58] Datos POST recibidos {"csrf_token":"04f8ca4895bcca55aba1ed76b2e2cc211a8cc30754ca6ff73c9008c3ad63f9d0","nombres":"Astrid","apellidos":"Marquina","tipo_cedula":"V-","cedula":"29680003","email":"astridmarquina188@gmail.com","cod_area":"0414","numero":"3545556","direccion":"mn","rol":"Medicina","especialidad":"Enfermer\u00eda General"}
+[2025-07-07 05:41:58] Datos procesados {"nombres":"Astrid","apellidos":"Marquina","cedula":"29680003","tipo_cedula":"V-","email":"astridmarquina188@gmail.com","rol":"Medicina","especialidad":"Enfermer\u00eda General"}
+[2025-07-07 05:41:58] Procesando imagen subida {"nombre":"slide2-mob.png","tama\u00f1o":221875}
+[2025-07-07 05:41:58] Imagen subida exitosamente {"archivo":"29680003_1751866918.png"}
+[2025-07-07 05:41:58] Iniciando verificaciones de base de datos 
+[2025-07-07 05:41:58] Email duplicado encontrado {"email":"astridmarquina188@gmail.com","usuario_existente":"Astrid Marquina"}
+[2025-07-07 05:41:58] Error mostrado: 📧 Email Ya Registrado - Este email ya está registrado por <strong>Astrid Marquina</strong>.<br>Use otro email o verifique si el usuario ya existe. {"detalles":""}
+[2025-07-07 05:42:17] Inicio de proceso de registro {"method":"POST","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/137.0.0.0 Safari\/537.36"}
+[2025-07-07 05:42:17] Datos POST recibidos {"csrf_token":"04f8ca4895bcca55aba1ed76b2e2cc211a8cc30754ca6ff73c9008c3ad63f9d0","nombres":"Astrid","apellidos":"Marquina","tipo_cedula":"V-","cedula":"29680003","email":"ana@gmail.com","cod_area":"0414","numero":"3545556","direccion":"mn","rol":"Medicina","especialidad":"Enfermer\u00eda General"}
+[2025-07-07 05:42:17] Datos procesados {"nombres":"Astrid","apellidos":"Marquina","cedula":"29680003","tipo_cedula":"V-","email":"ana@gmail.com","rol":"Medicina","especialidad":"Enfermer\u00eda General"}
+[2025-07-07 05:42:17] Procesando imagen subida {"nombre":"slide2-mob.png","tama\u00f1o":221875}
+[2025-07-07 05:42:17] Imagen subida exitosamente {"archivo":"29680003_1751866937.png"}
+[2025-07-07 05:42:17] Iniciando verificaciones de base de datos 
+[2025-07-07 05:42:17] Verificaciones completadas, iniciando inserción 
+[2025-07-07 05:42:17] Error en proceso de registro {"mensaje":"Unknown column 'fecha_registro' in 'field list'","archivo":"C:\\laragon\\www\\HLOTESISfin\\forms\\personal-regist.php","linea":415,"trace":"#0 C:\\laragon\\www\\HLOTESISfin\\forms\\personal-regist.php(415): mysqli->prepare('INSERT INTO per...')\n#1 {main}"}
+[2025-07-07 05:42:17] Imagen eliminada debido a error 
+[2025-07-07 05:42:17] Error mostrado: 💥 Error en el Registro - Ocurrió un error interno del sistema. El administrador ha sido notificado.<br><small class="text-muted">Código de error: REG_1751866937</small> {"detalles":""}

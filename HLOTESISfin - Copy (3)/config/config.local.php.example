@@ -1,0 +1,12 @@
+<?php
+/**
+ * Ejemplo de configuración local. Copia este archivo a config.local.php
+ * y ajusta los valores. config.local.php no se sube al repositorio.
+ */
+$db_host = 'localhost';
+$db_name = 'historiasmedicas';
+$db_user = 'root';
+$db_pass = '';
+
+// Entorno: 'prod' (producción) o 'dev' (permite session_temporal y herramientas de desarrollo)
+$app_env = 'prod';

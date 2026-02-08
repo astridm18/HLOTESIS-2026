@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/img/kaiadmin/logoHlo(2).ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - HLO Emergencias</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Public Sans', sans-serif;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: flex;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            min-height: 550px;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .login-img {
+            width: 50%;
+            background: linear-gradient(135deg, rgba(25, 25, 112, 0.8), rgba(0, 100, 200, 0.7)), 
+                        url('assets/img/Emergency.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+
+        .hlo-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 0.8s ease-out;
+            filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .welcome-text {
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        .welcome-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .welcome-text p {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .login-form {
+            width: 50%;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.6s ease-out 0.3s both;
+        }
+
+        .hlo-logo-form {
+            width: 120px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 4px 15px rgba(30, 58, 138, 0.2));
+        }
+
+        .login-form h2 {
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1e293b;
+            font-size: 1.5rem;
+            animation: fadeInDown 0.6s ease-out 0.4s both;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.6s ease-out 0.5s both;
+        }
+
+        .welcome-message p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-message .highlight {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease-out 0.6s both;
+        }
+
+        .form-control {
+            height: 50px;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-control:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+            background: #fff;
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-check {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 0.6s ease-out 0.7s both;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .form-check-input:checked {
+            background-color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .form-check-label {
+            font-size: 14px;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background-color: #1e3a8a;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            height: 50px;
+            font-size: 15px;
+            border: none;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out 0.8s both;
+        }
+
+        .btn-login:hover {
+            background-color: #1e40af;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+        }
+
+        .footer-text {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+            animation: fadeIn 0.6s ease-out 1s both;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                max-width: 400px;
+                margin: 20px;
+            }
+
+            .login-img, .login-form {
+                width: 100%;
+            }
+
+            .login-img {
+                height: 200px;
+                padding: 30px;
+            }
+
+            .hlo-logo {
+                width: 100px;
+                margin-bottom: 1rem;
+            }
+
+            .welcome-text h3 {
+                font-size: 1.4rem;
+            }
+
+            .login-form {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Efectos adicionales */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 20%;
+            animation-delay: -2s;
+        }
+
+        .floating-elements::after {
+            width: 40px;
+            height: 40px;
+            bottom: 30%;
+            left: 15%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-img">
+            <div class="floating-elements"></div>
+            <img src="assets/img/ivss-white.png" alt="HLO Logo" class="hlo-logo">
+            <div class="welcome-text">
+                <h3>¡Bienvenido!</h3>
+                
+            </div>
+        </div>
+        
+        <div class="login-form">
+         <div class="ivss-logo-container text-center">
+    <img src="assets/img/kaiadmin/logohlo.png" alt="IVSS Logo" class="ivss-logo-img mx-auto d-block" width="100">
+</div>
+            <h2>Inicio Sesión</h2>
+            
+            <div class="welcome-message">
+                <p><span class="highlight">¡Bienvenido!</span></p>
+                <p>Ingresa tus credenciales para continuar</p>
+            </div>
+            
+            <form id="loginForm" action="login.php" method="POST">
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        class="form-control" 
+                        placeholder="Correo electrónico" 
+                        required 
+                    />
+                </div>
+
+            <div class="form-group">
+    <div class="position-relative">
+        <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Contraseña"
+            required
+            style="padding-right: 40px;"
+        />
+        <i class="far fa-eye position-absolute" id="togglePasswordLogin"
+           style="right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #6c757d;"></i>
+    </div>
+</div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">
+                        Recuérdame
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-login w-100">
+                    Ingresar
+                </button>
+            </form>
+            
+            <div class="footer-text">
+                © 2025 - Astrid Marquina
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            
+            // Efecto de focus en inputs
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.transform = 'translateY(-1px)';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Validación simple del email
+            const emailInput = document.querySelector('input[name="email"]');
+            emailInput.addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#e2e8f0';
+                }
+            });
+
+            // Animación del botón al hacer submit
+            form.addEventListener('submit', function(e) {
+                const btn = document.querySelector('.btn-login');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Ingresando...';
+                btn.disabled = true;
+                
+                // Para demo - remover en producción
+                setTimeout(() => {
+                    btn.innerHTML = 'Ingresar';
+                    btn.disabled = false;
+                }, 2000);
+            });
+        });
+    </script>
+    <script>
+    // Función para mostrar/ocultar contraseña en login
+document.getElementById('togglePasswordLogin').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('togglePasswordLogin');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+});
+</script>
+</body>
+</html>
